@@ -42,12 +42,14 @@ Q-Cache works in following way:-
     - Reward signal
     - Eviction and insertion behavior
 
-2. State Representation:- The agent receives a numerical state vector encoding:
+2. State Representation:- The agent receives a numerical state vector composed of:
 
-   - Recency ranks
-   - Access frequencies
-   - Current request metadata
-   - Optional item embeddings / one-hot vectors
+    - Cache one-hot encoding (which items are present in cache)
+    - Access frequencies of all items
+    - Recency positions of cached items
+    - One-hot vector of the current request
+
+    This is a 400-dimensional state vector when using 100 items.
 
 3. Deep Q-Network (DQN) :- The DQN predicts Q-values representing: “How good or bad would it be to keep each item in cache?” The agent evicts the item with the lowest Q-value.
 
