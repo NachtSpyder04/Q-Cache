@@ -90,7 +90,7 @@ if __name__ == "__main__":
     
     #TOdo: need more experimentation here 
     train_dqn(
-        episodes=500,
+        episodes=1000,
         trace_type='mixed',
         cache_size=32,
         num_items=100,
